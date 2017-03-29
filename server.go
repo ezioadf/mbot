@@ -13,7 +13,6 @@ func hello(w http.ResponseWriter, r *http.Request) {
 }
 
 func webhook(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, "2137067855")
 	if r.FormValue("hub.mode") == "subscribe" && r.FormValue("hub.verify_token") == "qwerty123" {
 		io.WriteString(w, r.FormValue("hub.challenge"))
 	} else {
